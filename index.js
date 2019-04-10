@@ -30,7 +30,7 @@ const sortItem = item => {
 console.log(sortItem(item))
 console.log("");
 
-// Raga sort # 2
+// Sort string using array.sort # 2
 const sortNames = names => {
   return names.sort((item, comparator) => {
     if (item > comparator) return 1;
@@ -42,18 +42,18 @@ console.log(sortNames(names));
 console.log("");
 
  
-// Array shift
+// Remove first data in array using shift and alert it 
 console.log(names.shift())
+console.warn(names)
+console.log("")
+
+// Adding data in array using splice 
+console.log(names.splice(2, 0, 'Joko'))
 console.log(names)
 console.log("")
 
-// Array splice 
-console.log(item.splice(2, 1, 'Joko'))
-console.log(item)
-console.log("")
-
-// Array slice 
-console.log(item.slice(1, 3))
+// Delete data in array using slice
+console.log(names.slice(1, 3))
 console.log("")
 
 // Object Data
