@@ -5,7 +5,7 @@ const myContacts = [
     name: 'Raisa',
     age: 28,
     phone: '+1 111 101010',
-    email: 'raisa@.com',
+    email: 'raisa@saraswati.com',
     organization: 'Impact Byte',
     favorite: true,
     rating: 9,
@@ -18,7 +18,7 @@ const myContacts = [
     phone: '+62 812 242424',
     email: 'john@doe.com',
     organization: 'Impact Byte',
-    tags: 'creative'
+    tags: ['creative']
   },
   {
     id: 3,
@@ -27,14 +27,17 @@ const myContacts = [
     phone: '+63 813 363636',
     email: 'joe@smith.dev',
     organization: 'Smith Corporation.',
-    tags: 'smart'
+    tags: ['smart']
   }
 ]
+
+// -----------------------------------------------------------------------------
 
 // Show contact
 const showContacts = contacts => {
   for (let index = 0; index < contacts.length; index++) {
     const contact = contacts[index]
+
     console.log(
       `[${contact.id}] ${contact.name} (${contact.phone}) <${contact.email}> ${
         contact.organization
@@ -43,18 +46,14 @@ const showContacts = contacts => {
   }
 }
 
-// Call contact
-showContacts(myContacts)
-console.log('')
-
 // Filter contact based on organization name
-const filterContacts = (myContacts, similarOrganization) => {
+const filterContacts = (contacts, organization) => {
   let newContacts = []
 
-  for (let index = 0; index < myContacts.length; index++) {
-    const contact = myContacts[index]
+  for (let index = 0; index < contacts.length; index++) {
+    const contact = contacts[index]
 
-    if (contact.organization.length <= similarOrganization) {
+    if (contact.organization === organization) {
       newContacts.push(contact)
     }
   }
@@ -62,18 +61,25 @@ const filterContacts = (myContacts, similarOrganization) => {
   return newContacts
 }
 
-// Show Filter Contacts
-const filteredContacts = filterContacts(myContacts, 11)
-
-showContacts(filteredContacts)
-console.log('')
-
 // Add data into object
-const addData = () => {
+const addCountryAsIndonesia = () => {
   for (let index = 0; index < myContacts.length; index++) {
     myContacts[index].country = 'Indonesia'
   }
-  console.log(myContacts)
 }
 
-addData()
+// -----------------------------------------------------------------------------
+
+// Call contact
+showContacts(myContacts)
+console.log('')
+
+// Show Filter Contacts
+const filteredContacts = filterContacts(myContacts, 'Impact Byte')
+showContacts(filteredContacts)
+console.log('')
+
+addCountryAsIndonesia()
+
+console.log(myContacts)
+console.log('')

@@ -1,6 +1,8 @@
 // Array Data
 const names = ['Raisa', 'Budiman', 'Denny', 'Agus']
 
+// -----------------------------------------------------------------------------
+
 const showNames = names => {
   for (let index = 0; index < names.length; index++) {
     const name = names[index]
@@ -9,14 +11,12 @@ const showNames = names => {
   }
 }
 
-showNames(names)
-console.log('')
-
 // Sort using FOR Loop # 1
 const sortItems = names => {
   let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
   let newItem = []
+
   for (let indexi = 0; indexi < alphabet.length; indexi++) {
     for (let indexj = 0; indexj < names.length; indexj++) {
       if (alphabet[indexi] === names[indexj][0]) {
@@ -24,11 +24,9 @@ const sortItems = names => {
       }
     }
   }
+
   return newItem
 }
-
-console.log(sortItems(names))
-console.log('')
 
 // Sort string using array.sort # 2
 const sortNames = names => {
@@ -38,6 +36,18 @@ const sortNames = names => {
     return 0
   })
 }
+
+// -----------------------------------------------------------------------------
+
+showNames(names)
+console.log('')
+
+console.log(sortItems(names))
+console.log('')
+
+const sortedItems = sortItems(names)
+showNames(sortedItems)
+console.log('')
 
 console.log(sortNames(names))
 console.log('')
